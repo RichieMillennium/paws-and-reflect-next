@@ -1,0 +1,9 @@
+{
+  "name": "paws-and-reflect-next-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/paws-and-reflect-next-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["paws-and-reflect-next"],
+  "// targets": "to see all targets run: nx show project paws-and-reflect-next-e2e --web",
+  "targets": {}
+}
