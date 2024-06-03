@@ -1,0 +1,29 @@
+{
+  "name": "paws-and-reflect-gallery",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/paws-and-reflect/gallery/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/paws-and-reflect/gallery",
+        "tsConfig": "libs/paws-and-reflect/gallery/tsconfig.lib.json",
+        "project": "libs/paws-and-reflect/gallery/package.json",
+        "entryFile": "libs/paws-and-reflect/gallery/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "libs/paws-and-reflect/gallery/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "paws-and-reflect-core",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/paws-and-reflect/core/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/paws-and-reflect/core",
+        "tsConfig": "libs/paws-and-reflect/core/tsconfig.lib.json",
+        "project": "libs/paws-and-reflect/core/package.json",
+        "entryFile": "libs/paws-and-reflect/core/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "libs/paws-and-reflect/core/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

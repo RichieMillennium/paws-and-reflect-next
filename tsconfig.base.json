@@ -14,7 +14,30 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@paws-and-reflect-next/paws-and-reflect-gallery": [
+        "libs/paws-and-reflect/gallery/src/index.ts"
+      ],
+      "@paws-and-reflect-next/paws-and-reflect-gallery/server": [
+        "libs/paws-and-reflect/gallery/src/server.ts"
+      ],
+      "@paws-and-reflect-next/paws-and-reflect-picture-book": [
+        "libs/paws-and-reflect/picture-book/src/index.ts"
+      ],
+      "@paws-and-reflect-next/paws-and-reflect-picture-book/server": [
+        "libs/paws-and-reflect/picture-book/src/server.ts"
+      ],
+      "@paws-and-reflect-next/paws-and-reflect/core": [
+        "libs/paws-and-reflect/core/src/index.ts"
+      ],
+      "@paws-and-reflect-next/paws-and-reflect/core/server": [
+        "libs/paws-and-reflect/core/src/server.ts"
+      ],
+      "@paws-and-reflect-next/shared-api": ["libs/shared/api/src/index.ts"],
+      "@paws-and-reflect-next/shared-state": ["libs/shared/state/src/index.ts"],
+      "@paws-and-reflect-next/shared-types": ["libs/shared/types/src/index.ts"],
+      "@paws-and-reflect-next/shared-utils": ["libs/shared/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

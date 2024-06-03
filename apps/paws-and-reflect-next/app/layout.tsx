@@ -1,4 +1,7 @@
+import { Card, CardBody } from '@nextui-org/card';
+import { AppHeader } from '@paws-and-reflect-next/paws-and-reflect/core';
 import './global.css';
+import { Providers } from './providers';
 
 export const metadata = {
   title: 'Welcome to paws-and-reflect-next',
@@ -12,7 +15,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="h-full">
+      <Providers>
+        <div className="h-screen container m-auto bg-blue-100/50 p-16">
+          <Card className="w-1/2 min-w-64 h-full m-auto">
+            <CardBody>
+            <AppHeader />
+            {children}
+            </CardBody>
+          </Card>
+        </div>
+      </Providers>
+      </body>
     </html>
   );
 }

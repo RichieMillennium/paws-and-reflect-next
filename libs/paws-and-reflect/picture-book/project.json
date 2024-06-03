@@ -1,0 +1,29 @@
+{
+  "name": "paws-and-reflect-picture-book",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/paws-and-reflect/picture-book/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/paws-and-reflect/picture-book",
+        "tsConfig": "libs/paws-and-reflect/picture-book/tsconfig.lib.json",
+        "project": "libs/paws-and-reflect/picture-book/package.json",
+        "entryFile": "libs/paws-and-reflect/picture-book/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "libs/paws-and-reflect/picture-book/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}
