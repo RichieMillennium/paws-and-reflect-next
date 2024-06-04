@@ -188,3 +188,16 @@ export const getImages = async (name: string, parentBreed?: string): Promise<Arr
   }], setBreedsCache);
   return data.results || [];
 };
+
+export const searchBreeds = async (term: string): Promise<Array<IBreed>> => {
+  const allBreeds = await fetchAllBreeds();
+  if (term === 'fetch all') {
+    return allBreeds.results || [];
+  }
+  if (allBreeds.results) {
+    return allBreeds.results.filter(breed => {
+      return breed.name.toLowerCase().includes(term) || breed.parentBreed?.toLowerCase().includes(term);
+    });
+  }
+  return [];
+};

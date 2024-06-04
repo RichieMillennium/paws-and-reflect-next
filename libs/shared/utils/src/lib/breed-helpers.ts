@@ -60,3 +60,19 @@ export const breedMatchesSearchTerm = (breed: IBreed, searchTerm: string) => {
   const term = searchTerm.toLowerCase();
   return breed.name.includes(term) || breed.parentBreed?.includes(term);
 }
+
+export const createFilteredNameParam = (breed: IBreed): string =>
+  encodeURIComponent(`~${breed.name},${breed.parentBreed || ''}`);
+
+export const decodeFilteredNameParam = (nameParam: string): [string, string] => {
+  const decoded = decodeURIComponent(nameParam.slice(1));
+  const [breedName, parentName] = decoded.split(',');
+  return [breedName, parentName];
+};
+
+export const filterBreeds = (nameParam: string, breeds: IBreed[]) => {
+  const [filterName, filterParent] = decodeFilteredNameParam(nameParam);
+  return breeds.filter(breed => {
+    return breed.name === filterName && (breed.parentBreed === filterParent || !filterParent);
+  });
+};
