@@ -52,7 +52,6 @@ const processEnvSecrets = JSON.parse(process.env['SECRETS'] || process.env['secr
 
 export const analyze = async (imagePrompt: string) => {
   const apiKey = processEnvSecrets['OPENAI_API_KEY'] || process.env['OPENAI_API_KEY'];
-  console.log('oai', apiKey, 'e', JSON.stringify(process.env));
   const input = await getPrompt(imagePrompt);
   const model = new OpenAI({
     temperature: 0.6,
