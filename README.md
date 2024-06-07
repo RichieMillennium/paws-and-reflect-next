@@ -15,8 +15,6 @@ that is built using a Next.js stack.
 - tailwindcss 3.4.3
 - Nx 19.0.4
 
-See the [demo](https://richiemillennium.github.io/paws-and-redux-demo/)!
-
 ## Start the application
 
 Run `npm run serve` to start the Next.js development server. Happy coding!
